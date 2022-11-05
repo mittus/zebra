@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Tenders;
 use Carbon\Carbon;
 
-class testTaskData extends Seeder
+class TestTaskData extends Seeder
 {
     /**
      * Run the database seeds.

@@ -1,12 +1,9 @@
 <?php
 
-// namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\API\AuthController;
-use App\Http\Controllers\API\TendersApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +20,6 @@ Route::post('register', [AuthController::class, 'register']);
 Route::match(['get', 'post'], 'login', [AuthController::class, 'login'])->name('login');
 
 Route::middleware('auth:sanctum')->group(function() {
-    Route::get('/profile', function(Request $request) {
-        return auth()->user();
-    });
-
     Route::get('/', [TendersApiController::class, 'index']);
     Route::get('/code/{id}', [TendersApiController::class, 'tender']);
     Route::get('/query/{string}', [TendersApiController::class, 'filter_tenders'])->where('string', '.*');
